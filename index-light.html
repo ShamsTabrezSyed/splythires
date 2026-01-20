@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplytHires - Stop Applying. Start Interviewing.</title>
+    <link rel="stylesheet" href="styles-light.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+
+<body>
+    <!-- FOMO Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="warning-icon">⚠️</span>
+            <span class="notification-text">High Demand: Only <span class="spots-count">12</span> spots left for <span
+                    class="current-month">January</span> graduates.</span>
+            <div class="capacity-meter">
+                <div class="capacity-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glass Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="nav-logo">
+                <span class="logo-text">SplytHires</span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works" class="nav-link" data-link="how">How It Works</a>
+                <a href="#data" class="nav-link" data-link="data">Results</a>
+                <a href="#testimonials" class="nav-link" data-link="testimonials">Success Stories</a>
+                <a href="#pricing" class="nav-link" data-link="pricing">Pricing</a>
+                <a href="#" class="nav-link login-btn">Member Login</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Stop Applying. <br>
+                    Start <span class="kinetic-text" id="kinetic-text">Interviewing</span>.
+                </h1>
+                <p class="hero-subtitle">
+                    We are your career agents. We automate the grind—from LinkedIn optimization to cold emails—managing
+                    your entire job hunt so you can focus on cracking the interview.
+                </p>
+                <div class="hero-cta">
+                    <button class="cta-primary">Start Your Campaign</button>
+                    <button class="cta-secondary">See Live Dashboard</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-3d" id="dashboard-3d">
+                    <div class="dashboard-base">
+                        <div class="dashboard-screen">
+                            <div class="dashboard-header">
+                                <span class="dashboard-title">SplytHires Control Panel</span>
+                                <div class="status-indicator active"></div>
+                            </div>
+                            <div class="dashboard-stats">
+                                <div class="stat-box">
+                                    <span class="stat-number">487</span>
+                                    <span class="stat-label">Applications</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">23</span>
+                                    <span class="stat-label">Interviews</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">94%</span>
+                                    <span class="stat-label">Response Rate</span>
+                                </div>
+                            </div>
+                            <div class="notification-bubble" id="notification-1">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Application Sent</span>
+                            </div>
+                            <div class="notification-bubble" id="notification-2">
+                                <i class="fab fa-google"></i>
+                                <span>Reply from Google</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiring Partners Strip -->
+    <section class="hiring-partners">
+        <div class="marquee-container">
+            <div class="marquee-content" id="marquee-1">
+                <div class="partner-logo">
+                    <img src="assets/logos/Google.png" alt="Google" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Adobe.png" alt="Adobe" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/amazon.png" alt="amazon" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/americanair.png" alt="americanair" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Apple.png" alt="Apple" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Capital_One.png" alt="Capital_One" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/dr. pepper.png" alt="dr.pepper" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/ebay.png" alt="ebay" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/fedex.png" alt="fedex" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Hertz.png" alt="Hertz" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/jpmc.png" alt="jpmc" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/meta.png" alt="meta" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/microsoft.png" alt="microsoft" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/nvidia.png" alt="nvidia" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Oracle.png" alt="Oracle" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Spotify.png" alt="Spotify" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/starbucks.png" alt="starbucks" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Google.png" alt="Google" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Adobe.png" alt="Adobe" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/amazon.png" alt="amazon" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/americanair.png" alt="americanair" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Apple.png" alt="Apple" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Capital_One.png" alt="Capital_One" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/dr. pepper.png" alt="dr.pepper" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/ebay.png" alt="ebay" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/fedex.png" alt="fedex" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Hertz.png" alt="Hertz" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/jpmc.png" alt="jpmc" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/meta.png" alt="meta" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/microsoft.png" alt="microsoft" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/nvidia.png" alt="nvidia" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Oracle.png" alt="Oracle" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Spotify.png" alt="Spotify" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/starbucks.png" alt="starbucks" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Google.png" alt="Google" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Adobe.png" alt="Adobe" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/amazon.png" alt="amazon" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/americanair.png" alt="americanair" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Apple.png" alt="Apple" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Capital_One.png" alt="Capital_One" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/dr. pepper.png" alt="dr.pepper" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/ebay.png" alt="ebay" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/fedex.png" alt="fedex" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Hertz.png" alt="Hertz" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/jpmc.png" alt="jpmc" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/meta.png" alt="meta" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/microsoft.png" alt="microsoft" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/nvidia.png" alt="nvidia" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Oracle.png" alt="Oracle" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Spotify.png" alt="Spotify" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/starbucks.png" alt="starbucks" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Google.png" alt="Google" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Adobe.png" alt="Adobe" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/amazon.png" alt="amazon" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/americanair.png" alt="americanair" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Apple.png" alt="Apple" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Capital_One.png" alt="Capital_One" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/dr. pepper.png" alt="dr.pepper" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/ebay.png" alt="ebay" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/fedex.png" alt="fedex" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Hertz.png" alt="Hertz" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/jpmc.png" alt="jpmc" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/meta.png" alt="meta" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/microsoft.png" alt="microsoft" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/nvidia.png" alt="nvidia" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Oracle.png" alt="Oracle" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/Spotify.png" alt="Spotify" />
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logos/starbucks.png" alt="starbucks" />
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Data Bento Grid -->
+    <section class="data-section" id="data">
+        <div class="container">
+            <h2 class="section-title">The Data Doesn't Lie</h2>
+            <div class="bento-grid">
+                <div class="bento-card large" data-animation="flip">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-stats">
+                            <span class="stat-number" data-count="95">0</span>
+                            <span class="stat-suffix">%</span>
+                        </div>
+                        <h3 class="card-title">Response Rate</h3>
+                        <p class="card-description">Industry-leading response rates that get you noticed.</p>
+                    </div>
+                </div>
+                <div class="bento-card" data-animation="flip">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="card-stats">
+                            <span class="stat-number" data-count="300">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <h3 class="card-title">Apps/Student</h3>
+                        <p class="card-description">Maximum outreach with strategic targeting.</p>
+                    </div>
+                </div>
+                <div class="bento-card" data-animation="flip">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="card-stats">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <h3 class="card-title">GitHub Commits</h3>
+                        <p class="card-description">Optimized profile with meaningful contributions.</p>
+                    </div>
+                </div>
+                <div class="bento-card wide" data-animation="flip">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-stats">
+                            <span class="stat-number" data-count="40">0</span>
+                            <span class="stat-suffix">hrs</span>
+                        </div>
+                        <h3 class="card-title">Time Saved/Week</h3>
+                        <p class="card-description">Focus on what matters - interview prep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Map Section -->
+    <section class="journey-map-section" id="how-it-works">
+        <div class="container">
+            <div class="pipeline-header">
+                <h2 class="section-title">The Hiring Journey</h2>
+                <p class="pipeline-subtitle">From profile audit to landing the interview, we manage the entire process.</p>
+            </div>
+            <div class="journey-map-container">
+                <div class="journey-map-path"></div>
+                <div class="journey-map-node" id="node-audit">
+                    <div class="node-icon"><i class="fas fa-search"></i></div>
+                    <div class="node-content">
+                        <h3>Audit</h3>
+                        <p>We analyze your profile to identify strengths and weaknesses.</p>
+                    </div>
+                </div>
+                <div class="journey-map-node" id="node-blitz">
+                    <div class="node-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="node-content">
+                        <h3>Blitz</h3>
+                        <p>We launch a high-volume application campaign to targeted companies.</p>
+                    </div>
+                </div>
+                <div class="journey-map-node" id="node-outreach">
+                    <div class="node-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="node-content">
+                        <h3>Outreach</h3>
+                        <p>We contact recruiters and hiring managers on your behalf.</p>
+                    </div>
+                </div>
+                <div class="journey-map-node" id="node-interview">
+                    <div class="node-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="node-content">
+                        <h3>Interview</h3>
+                        <p>You focus on preparing for and acing the interviews.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">The Wall of Love</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonials-row top-row" id="testimonials-top">
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Google</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Software Engineer Intern</div>
+                            <div class="offer-salary">$8,500/month</div>
+                        </div>
+                        <div class="offer-student">Alex K. - CS '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Meta</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Product Manager Intern</div>
+                            <div class="offer-salary">$7,200/month</div>
+                        </div>
+                        <div class="offer-student">Sarah L. - EE '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Amazon</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Data Scientist Intern</div>
+                            <div class="offer-salary">$6,800/month</div>
+                        </div>
+                        <div class="offer-student">Mike R. - DS '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Netflix</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Frontend Engineer Intern</div>
+                            <div class="offer-salary">$9,200/month</div>
+                        </div>
+                        <div class="offer-student">Emily T. - CS '24</div>
+                    </div>
+                </div>
+                <div class="testimonials-row bottom-row" id="testimonials-bottom">
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Apple</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">iOS Developer Intern</div>
+                            <div class="offer-salary">$8,000/month</div>
+                        </div>
+                        <div class="offer-student">David M. - CS '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Tesla</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Autopilot Engineer Intern</div>
+                            <div class="offer-salary">$7,500/month</div>
+                        </div>
+                        <div class="offer-student">Lisa W. - ME '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Microsoft</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">Cloud Engineer Intern</div>
+                            <div class="offer-salary">$6,900/month</div>
+                        </div>
+                        <div class="offer-student">John D. - CS '24</div>
+                    </div>
+                    <div class="offer-letter">
+                        <div class="offer-header">
+                            <span class="company-name">Adobe</span>
+                            <span class="offer-status">ACCEPTED</span>
+                        </div>
+                        <div class="offer-details">
+                            <div class="offer-role">ML Engineer Intern</div>
+                            <div class="offer-salary">$7,800/month</div>
+                        </div>
+                        <div class="offer-student">Anna K. - AI '24</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Strategy</h2>
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <div class="toggle-switch" id="pricing-toggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label">Quarterly</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-plan="basic">
+                    <div class="card-header">
+                        <h3>Basic</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">129</span>
+                            <span class="amount quarterly" style="display: none;">99</span>
+                            <span class="period">/mo</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>160 Applications</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Application Tracker</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Monthly Reports</span>
+                            </li>
+                        </ul>
+                        <button class="btn-select">Start Campaign</button>
+                    </div>
+                </div>
+
+                <div class="pricing-card" data-plan="prime">
+                    <div class="card-header">
+                        <h3>Prime</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">199</span>
+                            <span class="amount quarterly" style="display: none;">169</span>
+                            <span class="period">/mo</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>300 Applications</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Application Strategy</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Resume Optimization</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Priority Support</span>
+                            </li>
+                        </ul>
+                        <button class="btn-select">Start Campaign</button>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured" data-plan="professional">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">349</span>
+                            <span class="amount quarterly" style="display: none;">299</span>
+                            <span class="period">/mo</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>500 Applications</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>LinkedIn Optimization</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Interview Prep</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>GitHub Enhancement</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>VIP Support</span>
+                            </li>
+                        </ul>
+                        <button class="btn-select">Start Campaign</button>
+                    </div>
+                </div>
+
+                <div class="pricing-card" data-plan="executive">
+                    <div class="card-header">
+                        <h3>Executive</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">700</span>
+                            <span class="amount quarterly" style="display: none;">599</span>
+                            <span class="period">/mo</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>1000 Applications</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Recruiter Cold Emailing</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Ghostwriting Service</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Personal Career Coach</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>White-glove Service</span>
+                            </li>
+                        </ul>
+                        <button class="btn-select">Start Campaign</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the SplytHires process work?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We start with a comprehensive audit of your resume and GitHub profile, then deploy our
+                            strategic application engine, followed by targeted outreach to recruiters and hiring
+                            managers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's the average time to first interview?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients receive their first interview request within 10-14 days. Our Professional plan
+                            clients typically secure 5-8 interviews per month.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with international students?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have extensive experience with CPT/OPT requirements and specifically target companies
+                            known to sponsor international candidates.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's your success guarantee?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee. If you don't receive at least 3 interview requests in
+                            your first month, we'll refund you in full.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">SplytHires</span>
+                    <p>Your career agents for the tech industry.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#testimonials">Success Stories</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="/about">About</a>
+                        <a href="/careers">Careers</a>
+                        <a href="/blog">Blog</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                        <a href="/support">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SplytHires. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <div class="floating-chat" id="floating-chat">
+        <i class="fas fa-comment-dots"></i>
+        <span>Chat with Expert</span>
+    </div>
+
+    <div class="toast-notification" id="toast-notification">
+        <div class="toast-content">
+            <i class="fas fa-bell"></i>
+            <span id="toast-message">Alex just landed an interview at Uber.</span>
+        </div>
+    </div>
+
+    <script src="script-light.js"></script>
+    
+</body>
+
+</html>
