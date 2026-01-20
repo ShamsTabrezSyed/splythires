@@ -20,6 +20,7 @@ class AnimationEngine {
         this.setupFAQ();
         this.setupToastNotifications();
         this.setupCapacityMeter();
+        this.setupModal();
 
 
         this.isInitialized = true;
@@ -334,6 +335,44 @@ class AnimationEngine {
     }
 
 
+
+    // Setup modal
+    setupModal() {
+        const modal = document.getElementById('campaign-modal');
+        const openBtnHero = document.getElementById('open-modal-btn');
+        const openBtnConversion = document.getElementById('open-modal-btn-conversion');
+        const closeBtn = document.querySelector('.close-button');
+
+        console.log('Modal:', modal);
+        console.log('Open Button Hero:', openBtnHero);
+        console.log('Open Button Conversion:', openBtnConversion);
+        console.log('Close Button:', closeBtn);
+
+        const openButtons = [];
+        if (openBtnHero) openButtons.push(openBtnHero);
+        if (openBtnConversion) openButtons.push(openBtnConversion);
+
+        if (modal && openButtons.length > 0 && closeBtn) {
+            openButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log('Open button clicked:', button.id);
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                console.log('Close button clicked');
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == modal) {
+                    console.log('Clicked outside modal');
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    }
 
     // Setup pricing toggle
     setupPricingToggle() {
