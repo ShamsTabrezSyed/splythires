@@ -16,12 +16,11 @@ class AnimationEngine {
         this.setupHoverEffects();
         this.setupKineticTypography();
         this.setupCountUpAnimations();
-        this.setupPipelineAnimation();
         this.setupPricingToggle();
         this.setupFAQ();
         this.setupToastNotifications();
         this.setupCapacityMeter();
-        this.setupStageInteractions();
+
 
         this.isInitialized = true;
     }
@@ -334,183 +333,7 @@ class AnimationEngine {
         countElements.forEach(el => observer.observe(el));
     }
 
-    // Setup circular pipeline animation
-    setupPipelineAnimation() {
-        const circularPipeline = document.querySelector('.circular-pipeline');
-        const stageCards = document.querySelectorAll('.stage-card');
-        const animatedCircle = document.querySelector('.animated-circle');
-        const progressCircles = document.querySelectorAll('.progress-circle');
 
-        if (circularPipeline) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Animate connection path
-                        if (animatedCircle) {
-                            this.animate(animatedCircle, {
-                                strokeDashoffset: 0
-                            }, { duration: 2000, easing: 'easeOut' });
-                        }
-
-                        // Animate progress circles sequentially
-                        progressCircles.forEach((circle, index) => {
-                            const targetOffset = [55, 88, 110, 22][index];
-                            setTimeout(() => {
-                                this.animate(circle, {
-                                    strokeDashoffset: targetOffset
-                                }, { duration: 800, easing: 'spring' });
-                            }, 1200 + (index * 200));
-                        });
-
-                        // Animate stage cards hover effects
-                        stageCards.forEach(card => {
-                            card.addEventListener('mouseenter', () => {
-                                this.enhanceStageCard(card);
-                            });
-
-                            card.addEventListener('mouseleave', () => {
-                                this.resetStageCard(card);
-                            });
-
-                            card.addEventListener('click', () => {
-                                this.pulseStageCard(card);
-                            });
-                        });
-
-                        // Start floating stats counter animation
-                        this.animateFloatingStats();
-
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            });
-
-            observer.observe(circularPipeline);
-        }
-    }
-
-    // Enhance stage card on hover
-    enhanceStageCard(card) {
-        const stageItem = card.closest('.stage-item');
-        const position = stageItem?.dataset.position;
-        const connectionDot = document.querySelectorAll('.connection-dot')[position];
-        
-        if (connectionDot) {
-            this.animate(connectionDot, {
-                transform: 'scale(2)',
-                opacity: 0.8
-            }, { duration: 300, easing: 'spring' });
-        }
-    }
-
-    // Reset stage card on mouse leave
-    resetStageCard(card) {
-        const stageItem = card.closest('.stage-item');
-        const position = stageItem?.dataset.position;
-        const connectionDot = document.querySelectorAll('.connection-dot')[position];
-        
-        if (connectionDot) {
-            this.animate(connectionDot, {
-                transform: 'scale(1)',
-                opacity: 1
-            }, { duration: 300, easing: 'easeOut' });
-        }
-    }
-
-    // Pulse stage card on click
-    pulseStageCard(card) {
-        this.animate(card, {
-            transform: 'translateY(-8px) scale(1.02)'
-        }, { duration: 150, easing: 'easeOut' });
-
-        setTimeout(() => {
-            this.animate(card, {
-                transform: 'translateY(-8px) scale(1)'
-            }, { duration: 150, easing: 'easeOut' });
-        }, 150);
-    }
-
-    // Animate floating stats with count-up effect
-    animateFloatingStats() {
-        const statNumbers = document.querySelectorAll('.stat-number');
-        const statsData = {
-            '2.3M': { current: 0, target: 2300000, suffix: '', divisor: 100000 },
-            '94%': { current: 0, target: 94, suffix: '%', divisor: 1 },
-            '48hr': { current: 0, target: 48, suffix: 'hr', divisor: 1 }
-        };
-
-        statNumbers.forEach(element => {
-            const text = element.textContent;
-            const config = statsData[text];
-            
-            if (config) {
-                const startTime = performance.now();
-                const duration = 2000;
-
-                const updateCounter = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easedProgress = this.easing.easeOut(progress);
-                    
-                    config.current = Math.floor(config.target * easedProgress);
-                    let displayValue = config.current;
-                    
-                    if (text === '2.3M') {
-                        displayValue = (config.current / config.divisor).toFixed(1) + 'M';
-                    } else {
-                        displayValue = config.current + config.suffix;
-                    }
-                    
-                    element.textContent = displayValue;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    }
-                };
-
-                setTimeout(() => {
-                    requestAnimationFrame(updateCounter);
-                }, 1500);
-            }
-        });
-    }
-
-    // Setup stage card interactions
-    setupStageInteractions() {
-        const stageItems = document.querySelectorAll('.stage-item');
-        
-        stageItems.forEach((item, index) => {
-            const card = item.querySelector('.stage-card');
-            
-            // Add staggered initial animation
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = item.style.transform.replace('scale(0.8)', 'scale(1)');
-            }, 1000 + (index * 200));
-
-            // Enhanced interaction effects
-            card.addEventListener('mouseenter', () => {
-                const icon = card.querySelector('.stage-icon');
-                if (icon) {
-                    this.animate(icon, {
-                        transform: 'scale(1.1) rotate(5deg)'
-                    }, { duration: 200, easing: 'spring' });
-                }
-            });
-
-            card.addEventListener('mouseleave', () => {
-                const icon = card.querySelector('.stage-icon');
-                if (icon) {
-                    this.animate(icon, {
-                        transform: 'scale(1) rotate(0deg)'
-                    }, { duration: 200, easing: 'easeOut' });
-                }
-            });
-        });
-    }
 
     // Setup pricing toggle
     setupPricingToggle() {
@@ -736,33 +559,4 @@ document.head.appendChild(rippleStyles);
 // Console Easter Egg
 console.log('%c⚡ SplytHires - High-Voltage Minimalism', 'font-size: 20px; font-weight: bold; color: #4F46E5;');
 console.log('%cStop Applying. Start Interviewing.', 'font-size: 14px; color: #06B6D4;');
-document.addEventListener('DOMContentLoaded', () => {
-    const nodes = document.querySelectorAll('.journey-map-node');
 
-    nodes.forEach(node => {
-        node.addEventListener('mouseenter', () => {
-            // You can add more complex animations here if needed
-        });
-
-        node.addEventListener('mouseleave', () => {
-            // And revert them here
-        });
-    });
-
-    window.addEventListener('scroll', () => {
-        const journeyMap = document.querySelector('.journey-map-container');
-        if (isElementInViewport(journeyMap)) {
-            journeyMap.classList.add('in-view');
-        }
-    });
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-});
