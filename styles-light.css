@@ -1743,16 +1743,17 @@ body::before {
     border-radius: 16px;
     width: 90%;
     max-width: 600px; /* Reduced max-width for compactness */
+    height: 50vh; /* Set height for desktop */
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.3s ease-out;
     overflow: hidden;
     z-index: 1002;
-    /* min-height removed, height controlled by right panel now */
+    align-items: stretch;
 }
 
 .calendly-left-panel {
     background: linear-gradient(135deg, #0052D4, #00BFFF); /* Specified blue gradient */
-    color: white;
+    color: white; /* Ensure text is white for contrast */
     padding: 20px; /* Further reduced padding */
     width: 40%;
     display: flex;
@@ -1771,14 +1772,14 @@ body::before {
 .calendly-left-panel .subtext {
     font-size: 0.85rem; /* Adjusted font size */
     margin-bottom: 10px; /* Reduced margin */
-    opacity: 0.9;
+    opacity: 1; /* Ensure full opacity */
     font-weight: 500;
 }
 
 .calendly-left-panel p {
     font-size: 0.8rem; /* Adjusted font size */
     margin-bottom: 10px; /* Reduced margin */
-    opacity: 0.85;
+    opacity: 1; /* Ensure full opacity */
     line-height: 1.4; /* Reduced line height */
 }
 
@@ -1788,7 +1789,7 @@ body::before {
     margin-bottom: 8px; /* Reduced margin */
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.7);
+    color: white; /* Ensure text is white */
 }
 
 .calendly-left-panel ul {
@@ -1808,7 +1809,7 @@ body::before {
 }
 
 .calendly-left-panel li i {
-    color: rgba(255, 255, 255, 0.7);
+    color: white; /* Ensure checkmark is white */
     margin-top: 2px;
     font-size: 0.8rem; /* Adjusted icon size */
 }
@@ -1834,16 +1835,18 @@ body::before {
     font-weight: 700;
     margin-bottom: 2px; /* Reduced margin */
     opacity: 1;
+    color: white; /* Ensure text is white */
 }
 
 .stats-row span {
     font-size: 0.65rem; /* Adjusted font size */
     opacity: 0.8;
+    color: white; /* Ensure text is white */
 }
 
 .calendly-right-panel {
     width: 60%;
-    height: 300px; /* Reduced height by ~15% from 350px */
+    height: 100%; /* Take full height of parent */
     overflow: hidden; /* Ensure iframe stays within bounds */
     padding: 15px; /* Slightly reduced internal padding */
 }
@@ -1878,7 +1881,7 @@ body::before {
         margin: 5% auto;
         max-width: 95%;
         transform: translate(-50%, -50%);
-        /* min-height removed for mobile flexibility */
+        height: 80vh; /* Set height for mobile */
     }
 
     .calendly-left-panel {
@@ -1889,7 +1892,7 @@ body::before {
 
     .calendly-right-panel {
         width: 100%;
-        height: 240px; /* Reduced height for mobile by ~15% from 280px */
+        height: 100%; /* Take full height of parent */
         padding: 10px; /* Further reduced internal padding for mobile */
     }
 
