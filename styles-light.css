@@ -1742,18 +1742,18 @@ body::before {
     transform: translate(-50%, -50%);
     border-radius: 16px;
     width: 90%;
-    max-width: 600px; /* Further reduced max-width */
+    max-width: 600px; /* Reduced max-width for compactness */
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.3s ease-out;
     overflow: hidden;
     z-index: 1002;
-    min-height: 400px; /* Ensure a minimum height for content visibility */
+    /* min-height removed, height controlled by right panel now */
 }
 
 .calendly-left-panel {
-    background: linear-gradient(135deg, #007bff, #00bfff);
+    background: linear-gradient(135deg, #0052D4, #00BFFF); /* Specified blue gradient */
     color: white;
-    padding: 25px; /* Reduced padding for compactness */
+    padding: 20px; /* Further reduced padding */
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -1762,30 +1762,30 @@ body::before {
 }
 
 .calendly-left-panel h2 {
-    font-size: 1.4rem; /* Adjusted font size */
+    font-size: 1.3rem; /* Adjusted font size */
     font-weight: 700;
-    margin-bottom: 8px; /* Reduced margin */
-    line-height: 1.3;
+    margin-bottom: 5px; /* Reduced margin */
+    line-height: 1.2; /* Reduced line height */
 }
 
 .calendly-left-panel .subtext {
-    font-size: 0.9rem;
-    margin-bottom: 15px; /* Reduced margin */
+    font-size: 0.85rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Reduced margin */
     opacity: 0.9;
     font-weight: 500;
 }
 
 .calendly-left-panel p {
-    font-size: 0.85rem; /* Adjusted font size */
-    margin-bottom: 15px; /* Reduced margin */
+    font-size: 0.8rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Reduced margin */
     opacity: 0.85;
-    line-height: 1.5;
+    line-height: 1.4; /* Reduced line height */
 }
 
 .calendly-left-panel h3 {
-    font-size: 0.95rem; /* Adjusted font size */
+    font-size: 0.9rem; /* Adjusted font size */
     font-weight: 600;
-    margin-bottom: 10px; /* Reduced margin */
+    margin-bottom: 8px; /* Reduced margin */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.7);
@@ -1794,29 +1794,29 @@ body::before {
 .calendly-left-panel ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 15px; /* Reduced margin */
 }
 
 .calendly-left-panel li {
     display: flex;
     align-items: flex-start;
-    gap: 8px; /* Reduced gap */
-    margin-bottom: 8px; /* Reduced margin */
-    font-size: 0.8rem; /* Adjusted font size */
-    line-height: 1.4;
+    gap: 6px; /* Reduced gap */
+    margin-bottom: 6px; /* Reduced margin */
+    font-size: 0.75rem; /* Adjusted font size */
+    line-height: 1.3; /* Reduced line height */
     font-weight: 400;
 }
 
 .calendly-left-panel li i {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 2px;
-    font-size: 0.85rem; /* Adjusted icon size */
+    font-size: 0.8rem; /* Adjusted icon size */
 }
 
 .stats-row {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px; /* Reduced margin */
+    margin-top: 15px; /* Reduced margin */
     padding-top: 10px; /* Reduced padding */
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     flex-wrap: wrap;
@@ -1825,26 +1825,27 @@ body::before {
 .stats-row div {
     text-align: center;
     flex: 1;
-    min-width: 60px; /* Adjusted min-width */
-    margin: 3px 0; /* Reduced margin */
+    min-width: 50px; /* Adjusted min-width */
+    margin: 3px 0;
 }
 
 .stats-row p {
     font-size: 1.1rem; /* Adjusted font size */
     font-weight: 700;
-    margin-bottom: 3px;
+    margin-bottom: 2px; /* Reduced margin */
     opacity: 1;
 }
 
 .stats-row span {
-    font-size: 0.7rem; /* Adjusted font size */
+    font-size: 0.65rem; /* Adjusted font size */
     opacity: 0.8;
 }
 
 .calendly-right-panel {
     width: 60%;
-    height: 350px; /* Reduced height by 30% from 500px */
-    overflow: hidden;
+    height: 300px; /* Reduced height by ~15% from 350px */
+    overflow: hidden; /* Ensure iframe stays within bounds */
+    padding: 15px; /* Slightly reduced internal padding */
 }
 
 .calendly-right-panel iframe {
@@ -1858,7 +1859,7 @@ body::before {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 28px; /* Adjusted size */
+    font-size: 24px; /* Adjusted size */
     font-weight: bold;
     z-index: 10;
     transition: color 0.2s ease;
@@ -1877,23 +1878,24 @@ body::before {
         margin: 5% auto;
         max-width: 95%;
         transform: translate(-50%, -50%);
-        min-height: unset; /* Remove min-height for mobile flexibility */
+        /* min-height removed for mobile flexibility */
     }
 
     .calendly-left-panel {
         width: 100%;
         border-radius: 16px 16px 0 0;
-        padding: 20px; /* Reduced padding for mobile */
+        padding: 15px; /* Further reduced padding for mobile */
     }
 
     .calendly-right-panel {
         width: 100%;
-        height: 280px; /* Reduced height for mobile by 30% from 400px */
+        height: 240px; /* Reduced height for mobile by ~15% from 280px */
+        padding: 10px; /* Further reduced internal padding for mobile */
     }
 
     .stats-row {
         justify-content: center;
-        gap: 10px; /* Reduced gap for mobile */
+        gap: 8px; /* Reduced gap for mobile */
     }
 
     .stats-row div {
