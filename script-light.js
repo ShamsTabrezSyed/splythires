@@ -21,6 +21,7 @@ class AnimationEngine {
         this.setupToastNotifications();
         this.setupCapacityMeter();
         this.setupModal();
+        this.setupCalendlyModal();
 
 
         this.isInitialized = true;
@@ -369,6 +370,28 @@ class AnimationEngine {
                 if (event.target == modal) {
                     console.log('Clicked outside modal');
                     modal.style.display = 'none';
+                }
+            });
+        }
+    }
+
+    setupCalendlyModal() {
+        const calendlyModal = document.getElementById('calendly-modal');
+        const openCalendlyBtn = document.getElementById('open-calendly-modal-btn');
+        const closeCalendlyBtn = document.querySelector('.close-button-calendly');
+
+        if (calendlyModal && openCalendlyBtn && closeCalendlyBtn) {
+            openCalendlyBtn.addEventListener('click', () => {
+                calendlyModal.style.display = 'block';
+            });
+
+            closeCalendlyBtn.addEventListener('click', () => {
+                calendlyModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == calendlyModal) {
+                    calendlyModal.style.display = 'none';
                 }
             });
         }
