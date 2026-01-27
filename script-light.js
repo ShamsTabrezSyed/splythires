@@ -397,37 +397,61 @@ class AnimationEngine {
         }
     }
 
+   
     // Setup pricing toggle
-    setupPricingToggle() {
-        const toggle = document.getElementById('pricing-toggle');
-        const monthlyPrices = document.querySelectorAll('.amount.monthly');
-        const quarterlyPrices = document.querySelectorAll('.amount.quarterly');
+setupPricingToggle() {
+    const toggle = document.getElementById('pricing-toggle');
+    const monthlyLabel = document.getElementById('monthly-label');
+    const quarterlyLabel = document.getElementById('quarterly-label');
+    const allPriceAmounts = document.querySelectorAll('.amount');
 
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                const isActive = toggle.classList.contains('active');
+    let isQuarterly = false;
 
-                // Animate the toggle
-                if (isActive) {
-                    toggle.classList.remove('active');
-                    monthlyPrices.forEach(price => {
-                        price.style.display = 'block';
-                    });
-                    quarterlyPrices.forEach(price => {
-                        price.style.display = 'none';
-                    });
-                } else {
-                    toggle.classList.add('active');
-                    monthlyPrices.forEach(price => {
-                        price.style.display = 'none';
-                    });
-                    quarterlyPrices.forEach(price => {
-                        price.style.display = 'block';
-                    });
+    if (toggle && monthlyLabel && quarterlyLabel && allPriceAmounts.length > 0) {
+        // Set initial state
+        monthlyLabel.style.color = 'var(--text-primary)';
+        monthlyLabel.style.fontWeight = 'var(--font-weight-bold)';
+        quarterlyLabel.style.color = 'var(--text-muted)';
+        quarterlyLabel.style.fontWeight = 'var(--font-weight-medium)';
+
+        toggle.addEventListener('click', () => {
+            isQuarterly = !isQuarterly;
+            toggle.classList.toggle('active');
+
+            // Update label styling
+            if (isQuarterly) {
+                monthlyLabel.style.color = 'var(--text-muted)';
+                monthlyLabel.style.fontWeight = 'var(--font-weight-medium)';
+                quarterlyLabel.style.color = 'var(--text-primary)';
+                quarterlyLabel.style.fontWeight = 'var(--font-weight-bold)';
+            } else {
+                monthlyLabel.style.color = 'var(--text-primary)';
+                monthlyLabel.style.fontWeight = 'var(--font-weight-bold)';
+                quarterlyLabel.style.color = 'var(--text-muted)';
+                quarterlyLabel.style.fontWeight = 'var(--font-weight-medium)';
+            }
+
+            // Update all prices with animation
+            allPriceAmounts.forEach(amount => {
+                const monthlyPrice = amount.getAttribute('data-monthly');
+                const quarterlyPrice = amount.getAttribute('data-quarterly');
+
+                if (monthlyPrice && quarterlyPrice) {
+                    // Add fade out animation
+                    amount.style.transform = 'scale(0.8)';
+                    amount.style.opacity = '0';
+
+                    // Update price after animation
+                    setTimeout(() => {
+                        amount.textContent = isQuarterly ? quarterlyPrice : monthlyPrice;
+                        amount.style.transform = 'scale(1)';
+                        amount.style.opacity = '1';
+                    }, 150);
                 }
             });
-        }
+        });
     }
+}
 
     // Setup FAQ accordion
     setupFAQ() {
