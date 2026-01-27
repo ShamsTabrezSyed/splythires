@@ -7,8 +7,8 @@ It showcases how AI-powered automation and human expertise combine to optimize r
 ---
 
 ## 🌐 Live Demo  
-**Website:** [https://yourdomain.com](https://yourdomain.com)  
-**GitHub Pages:** [https://yourusername.github.io/splythires](https://yourusername.github.io/splythires)
+**Website:** [https://www.splythires.sahfirsolutions.com](https://www.splythires.sahfirsolutions.com)  
+**GitHub Pages:** [https://shamstabrezsyed.github.io/splythires/](https://shamstabrezsyed.github.io/splythires/)
 
 ---
 
