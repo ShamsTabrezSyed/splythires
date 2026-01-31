@@ -1011,12 +1011,13 @@ your-project/
         └── whatsapp-8.png
 
 /* Pricing Section */
+
 .pricing-section {
     padding: var(--spacing-2xl) 2rem;
     background: var(--bg-white);
-    background: var(--bg-white);
     box-sizing: border-box;
 }
+
 .pricing-section h2 {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -1033,6 +1034,8 @@ your-project/
 .toggle-label {
     font-weight: var(--font-weight-medium);
     color: var(--text-secondary);
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    cursor: pointer;
 }
 
 .toggle-switch {
@@ -1070,7 +1073,7 @@ your-project/
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* Keep horizontal on desktop */
     margin-top: 2rem;
     width: 100%;
     max-width: 1400px;
@@ -1080,8 +1083,8 @@ your-project/
 }
 
 .pricing-card {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 0 1 280px; /* Fixed basis, don't grow, can shrink */
+    min-width: 250px;
     max-width: 300px;
     background: #ffffff;
     border-radius: 16px;
@@ -1120,90 +1123,25 @@ your-project/
     font-size: 0.7rem;
 }
 
-.pricing-card .card-header {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
+/* Responsive breakpoints - CORRECTED */
+@media (min-width: 1200px) {
+    .pricing-card {
+        flex: 0 1 280px;
+    }
 }
 
-.pricing-card h3 {
-    font-size: 1.4rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
-}
-
-.price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: var(--spacing-xs);
-}
-
-.currency {
-    font-size: 1.3rem;
-    color: var(--accent-indigo);
-}
-
-.amount {
-    font-size: 3rem;
-    font-weight: var(--font-weight-black);
-    color: var(--text-primary);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    line-height: 1;
-}
-
-.pricing-card:hover .amount {
-    transform: scale(1.25);
-}
-
-.period {
-    color: var(--text-secondary);
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    text-align: left;
-}
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    color: var(--text-primary);
-    line-height: 1.4;
-}
-
-.feature-item i {
-    color: var(--accent-cyan);
-    flex-shrink: 0;
-    margin-top: 2px;
-    font-size: 0.85rem;
-}
-.feature-item span {
-    flex: 1;
-}
-.toggle-label {
-    font-weight: var(--font-weight-medium);
-    color: var(--text-secondary);
-    transition: color 0.3s ease, font-weight 0.3s ease;  /* ← ADDED */
-    cursor: pointer;  /* ← ADDED */
-}
-
-
-
-/* Responsive Design for Pricing */
-@media (max-width: 1200px) {
+/* Tablets - Still keep horizontal */
+@media (max-width: 1199px) and (min-width: 900px) {
     .pricing-section .pricing-grid {
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 0 1rem;
+        flex-wrap: nowrap; /* Keep horizontal */
     }
     
     .pricing-card {
-        padding: 1.5rem 1rem;
+        flex: 0 1 240px;
+        min-width: 220px;
+        padding: 1.5rem 1.25rem;
     }
     
     .amount {
@@ -1211,26 +1149,25 @@ your-project/
     }
 }
 
-@media (max-width: 1024px) {
+/* Medium tablets - Start wrapping */
+@media (max-width: 899px) {
     .pricing-section .pricing-grid {
-        flex-wrap: wrap;
-        max-width: 800px;
+        flex-wrap: wrap; /* Now we wrap */
+        max-width: 600px;
+        gap: 1.5rem;
     }
     
     .pricing-card {
         flex: 1 1 calc(50% - 1rem);
-        max-width: none;
+        max-width: 280px;
     }
     
     .pricing-card.featured {
         transform: scale(1);
     }
-    
-    .pricing-card.featured:hover {
-        transform: translateY(-6px);
-    }
 }
 
+/* Mobile - Full width stacking */
 @media (max-width: 768px) {
     .pricing-section .pricing-grid {
         flex-direction: column;
@@ -1242,6 +1179,10 @@ your-project/
         flex: 1 1 100%;
         max-width: 400px;
         width: 100%;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
     }
 }
 /* FAQ Section */
