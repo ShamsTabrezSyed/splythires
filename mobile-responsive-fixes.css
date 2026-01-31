@@ -392,22 +392,23 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.7rem;
     }
+    /* Success Stories Section - Mobile Horizontal Scroll */
     .success-stories {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-    padding-bottom: 1rem;
-  }
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
 
     .success-stories img {
-    flex: 0 0 auto;
-    width: 80%;
-    border-radius: 10px;
-    scroll-snap-align: start;
-  }
+        flex: 0 0 auto;
+        width: 80%;
+        border-radius: 10px;
+        scroll-snap-align: start;
+    }
 }
 
     /* Pricing Section */
