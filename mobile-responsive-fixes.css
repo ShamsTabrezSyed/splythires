@@ -366,15 +366,28 @@
     }
 
     .testimonials-masonry {
-        column-count: 1;
-        padding: 0 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0 1rem 1rem;
+        scroll-snap-type: x mandatory;
+    }
+
+    .testimonials-masonry::-webkit-scrollbar {
+        display: none;
     }
 
     .screenshot-card {
-        max-width: 100%;
-        width: 100%;
-        margin-bottom: 1rem;
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+        max-width: 80%;
     }
+
+    
 
     .screenshot-footer {
         padding: 0.75rem;
